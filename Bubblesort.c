@@ -24,12 +24,31 @@ int main(){
   return(0);
 } // end main
 
-void printvalues(int *arr) {
-	printf("[");
-	for (int i = 0; i < Max; i++) {
-		printf("%d ", arr[i]);
-	}
-	printf("]\n");
+void printValues(int *array) {	
+  printf("[");
+  for (int i = 0; i < MAX; i++) {
+  printf(" %d ", array[i]);
+    }
+  printf("]\n");
+}      
+
+void swap(int *x, int *y) {
+  int temp;
+  temp = *x;
+  *x = *y;
+  *y = temp;
 }
 
-
+void sort(int *array) {
+         int i;
+         int j;
+         for (int i = 0; i < MAX - 1; i++ ) {
+             for (j = 0; j < MAX - 2; j++) {
+                  if (array[j] > array[j+1]) { 
+                     swap(&array[j], &array[j+1]);
+                     printValues(array);
+                  }
+	     }
+	 }
+     }
+	
